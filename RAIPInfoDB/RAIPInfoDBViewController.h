@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "AFJSONRequestOperation.h"
 
-#define API_KEY [NSString stringWithFormat:@"902da93ab21441100fb1c41f82df390d9859d099d8bac159dbc135ac80c9516d"]
+#define API_KEY [NSString stringWithFormat:@"PUT API KEY HERE"]
 
 @interface RAIPInfoDBViewController : UIViewController {
     
