@@ -12,7 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    // style navigation bar using appearance proxy
+    NSDictionary *navBarAppearanceDict = @{UITextAttributeFont : [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0], UITextAttributeTextColor : [UIColor whiteColor]};
+    [[UINavigationBar appearance] setTitleTextAttributes:navBarAppearanceDict];
+    
     return YES;
 }
 							

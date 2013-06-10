@@ -1,21 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qek-Un-JEt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--InfoDB View Controller - IP Geolocator-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="RAIPInfoDBViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPp-9T-yat">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Retrieve Info">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retrieveLocationPressed:" destination="2" eventType="touchUpInside" id="mYM-yT-UA9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Of-FC-XpX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7kh-GM-1rn"/>
+                                    <constraint firstAttribute="width" constant="133" id="81P-48-1fd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-6g-wXi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="jub-c2-EN0"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEP-A7-hSi">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="sKo-g4-ehd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VcY-fz-Af0"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zvW-6g-wXi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="40S-8k-Kx3"/>
+                            <constraint firstItem="9Of-FC-XpX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="5j6-zZ-gQY"/>
+                            <constraint firstItem="zvW-6g-wXi" firstAttribute="top" secondItem="yPp-9T-yat" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7WJ-Vv-RCj"/>
+                            <constraint firstItem="yPp-9T-yat" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9tY-hY-TQw"/>
+                            <constraint firstItem="rEP-A7-hSi" firstAttribute="top" secondItem="zvW-6g-wXi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QiI-hv-EcP"/>
+                            <constraint firstItem="rEP-A7-hSi" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZWN-yv-s3U"/>
+                            <constraint firstAttribute="trailing" secondItem="yPp-9T-yat" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aSk-vb-Hbn"/>
+                            <constraint firstAttribute="trailing" secondItem="rEP-A7-hSi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dww-4R-BPt"/>
+                            <constraint firstItem="zvW-6g-wXi" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="e69-Yc-iDs"/>
+                            <constraint firstAttribute="trailing" secondItem="VcY-fz-Af0" secondAttribute="trailing" constant="60" id="i9M-2w-U2h"/>
+                            <constraint firstItem="9Of-FC-XpX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nD2-gJ-3FF"/>
+                            <constraint firstItem="zvW-6g-wXi" firstAttribute="top" secondItem="9Of-FC-XpX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pXu-s5-zqu"/>
+                            <constraint firstItem="VcY-fz-Af0" firstAttribute="centerY" secondItem="rEP-A7-hSi" secondAttribute="centerY" type="default" id="qyI-27-p5A"/>
+                            <constraint firstItem="yPp-9T-yat" firstAttribute="leading" secondItem="9Of-FC-XpX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zqP-q4-GQs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="IP Geolocator" id="Bd6-Kz-6Hv"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="VcY-fz-Af0" id="P5u-YN-ksR"/>
+                        <outlet property="buttonGetLocation" destination="yPp-9T-yat" id="YQx-PA-obI"/>
+                        <outlet property="labelDetails" destination="rEP-A7-hSi" id="Z67-yA-QCg"/>
+                        <outlet property="mapView" destination="zvW-6g-wXi" id="vhU-yR-KtQ"/>
+                        <outlet property="textFieldIPAddress" destination="9Of-FC-XpX" id="Jwe-bK-Cfk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="699" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vTa-Kv-WDH">
+            <objects>
+                <navigationController id="qek-Un-JEt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g7n-bD-fMy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="QvS-pN-AFV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aub-v3-tqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="138"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
